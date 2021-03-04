@@ -1,0 +1,1024 @@
+/* Fonts */
+@font-face{
+    font-family: "Raleway-regular";
+    src: url(../Fonts/Raleway-Regular.ttf);
+}
+
+@font-face{
+    font-family: "Raleway-medium";
+    src: url(../Fonts/Raleway-Medium.ttf);
+}
+
+@font-face{
+    font-family: "Raleway-bold";
+    src: url(../Fonts/Raleway-Bold.ttf);
+}
+
+@font-face{
+    font-family: "Raleway-extrabold";
+    src: url(../Fonts/Raleway-ExtraBold.ttf);
+}
+
+@font-face{
+    font-family: "Raleway-semibold";
+    src: url(../Fonts/Raleway-SemiBold.ttf);
+}
+
+@font-face{
+    font-family: "Raleway-black";
+    src: url(../Fonts/Raleway-Black.ttf);
+}
+
+/* Colors */
+
+:root{
+    --primary:#EEBF00;
+    --secondary:#232B38;
+    --ternary:#6C6C6C;
+    --danger:#FE4545;
+    --pure:#FEFEFE;
+    --light:#F0F0F0;
+    --heaven:#FFFFFF;
+    --footer:#2D333F;
+}
+
+/* Reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Common Styles */
+body{
+    -webkit-font-smoothing:antialiased;
+    font-family: "Raleway-regular";
+}
+
+.container{
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+/* Media Queries */
+@media (min-width:576px){
+    .container{
+        max-width: 540px;
+    }
+}
+
+@media (min-width:768px){
+    .container{
+        max-width: 720px;
+    }
+}
+
+@media (min-width:992px){
+    .container{
+        max-width: 960px;
+    }
+}
+
+@media (min-width:1200px){
+    .container{
+        max-width: 1152px;
+    }
+}
+
+.mainWrapper{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.navBackground{
+    width: 100%;
+    height: 100%;
+    background: var(--light);
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0;
+    z-index: 1;
+}
+
+.navTrigger{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    padding: 15px;
+    display: none;
+}
+
+.navTrigger svg{
+    transform: rotate(90deg) scaleX(-1);
+    width: 40px;
+    height: 40px;
+}
+
+.siteContentWrapper{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: var(--heaven);
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.siteContentWrapper.scaled{
+    transform: scale(0.9) translateX(90%);
+    border-radius: 3px;
+    box-shadow: 0 3px 10px 0 var(--secondary);
+}
+
+.siteContent{
+    width: 100%;
+    height: 100%;
+    overflow-x: auto;
+}
+
+.navBackground .mobileLogo{
+    padding: 1rem;
+}
+
+.navBackground .mobileNav{
+    padding: 1rem;
+}
+
+.navBackground .mobileNav ul{
+    list-style-type: none;
+}
+
+.navBackground .mobileNav ul li{
+    margin-bottom: 1rem;
+}
+
+.navBackground .mobileNav ul li a{
+    text-decoration: none;
+    color: var(--secondary);
+    font-family: "Raleway-medium";
+}
+
+.navBackground .mobileNav ul li a:hover{
+    color: var(--primary);
+}
+
+.navBackground .contact,.navBackground .time{
+    padding: 1rem;
+    padding-left: 0;
+}
+
+.navBackground .contact img,.navBackground .time img{
+    margin-right: 1rem;
+}
+
+.navBackground .contact h5,.navBackground .time h5{
+    font-family: "Raleway-bold";
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
+}
+
+.navBackground .contact h6, .navBackground .time h6{
+    font-size: 0.75rem;
+}
+
+.navBackground .cart{
+    margin-bottom: 2rem;
+}
+
+.navBackground .cart a{
+    color: var(--secondary);
+    text-decoration: none;
+    font-family: "Raleway-bold";
+}
+
+.navBackground .cart img{
+    margin-right: 0.75rem;
+    width: 20px;
+    height: 20px;
+}
+
+/* Header */
+header.topbar{
+    background-color: var(--secondary);
+    color: var(--pure);
+    font-family: "Raleway-semibold";
+    padding: 0.75rem 0;
+}
+
+header.topbar .auth > div a{
+    color: var(--pure);
+    text-decoration: none;
+}
+
+header.topbar .icons a{
+    margin-right: 0.6rem;
+}
+
+header.topbar .auth .divider{
+    padding: 0 1rem;
+}
+
+header.topbar .auth > div img{
+    margin-right: 0.35rem;
+}
+
+
+/* Utility Classes */
+.flex{
+    display: flex;
+}
+
+.justify-between{
+    justify-content: space-between;
+}
+
+.items-center{
+    align-items: center;
+}
+
+.justify-center{
+    justify-content: center;
+}
+
+.magic-shadow{
+    position: relative;
+    background: var(--heaven);
+}
+
+.magic-shadow:after{
+    content:'';
+    display: block;
+    width: 100%;
+    height: 69px;
+    background-image: url(../Icons/shadow.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    bottom: -22px;
+    z-index: -1;
+}
+
+.magic-shadow-sm{
+    position: relative;
+    background: var(--heaven);
+}
+
+.magic-shadow-sm:after{
+    content:'';
+    display: block;
+    width: 100%;
+    height: 69px;
+    background-image: url(../Icons/shadow-sm.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    bottom: -20px;
+    z-index: -1;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.btn{
+    padding: 0.75rem 0.75rem;
+    border-radius: 4px;
+    border: none;
+    line-height: 0.8;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.btn-primary{
+    background-color: var(--primary);
+    color: var(--heaven);
+}
+
+.btn-primary:hover{
+    background-color: var(--heaven);
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+.btn-secondary{
+    background-color: var(--secondary);
+    color: var(--heaven);
+}
+
+.btn-secondary:hover{
+    background-color: var(--heaven);
+    color: var(--secondary);
+    border: 1px solid var(--secondary);
+}
+
+.textCenter{
+    text-align: center;
+}
+
+.flex1{
+    flex: 1;
+}
+
+.textPrimary{
+    color: var(--primary);
+}
+
+.textPure{
+    color: var(--heaven);
+}
+
+/* Nav Section */
+
+nav .top{
+    padding: 1.5rem 0;
+}
+
+nav .top .contact h5 , nav .top .time h5{
+    font-family: "Raleway-black";
+    margin-bottom: 0.25rem;
+}
+
+nav .top .contact h6 , nav .top .time h6{
+    font-family: "Raleway-medium";
+    letter-spacing: 0.055rem;
+    font-size: 0.75rem;
+    color: var(--ternary);
+}
+
+nav .top .contact img , nav .top .time img{
+    margin-right: 1rem;
+}
+
+nav .navbar a{
+    text-decoration: none;
+    color: var(--secondary);
+    font-family: "Raleway-semibold";
+    font-size: 1rem;
+    padding: 1rem 1.5rem;
+    transition: all .3s ease;
+}
+
+nav .navbar a.active{
+    background: var(--primary);
+    color: var(--pure);
+}
+
+nav .navbar a:hover{
+    background: var(--primary);
+    color: var(--pure);
+}
+
+/* MainPage Section */
+.mainPage{
+    height: 600px;
+    background-image: url('../Images/hero.png');
+    background-position: 0% 0%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.mainPage .container{
+    position: relative;
+}
+
+.mainPage .welcome{
+    margin-bottom: 0.25rem;
+}
+
+.mainPage .welcome span{
+    font-family: "Raleway-bold";
+    color: var(--secondary);
+    margin-right: 0.75rem;
+}
+
+.mainPage h1{
+    font-family: "Raleway-extrabold";
+    color: var(--secondary);
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.mainPage h1 span{
+    color: var(--primary);
+}
+
+.mainPage p{
+    font-family: "Raleway-medium";
+    width: 50%;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.mainPage button:first-child{
+    margin-right: 0.5rem;
+}
+
+.mainPage .mainImage{
+    position: absolute;
+    top: -40px;
+    right: 40px;
+}
+
+/* Top Products section */
+
+section{
+    padding: 4rem 0;
+}
+
+section.topProducts{
+    background: var(--light);
+}
+
+.sectionHeading{
+    font-family: "Raleway-bold";
+    text-align: center;
+    position: relative;
+    margin-bottom: 6rem;
+}
+
+.sectionHeading:after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 30px;
+    background-image: url(../icons/hr.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    bottom: -40px;
+}
+
+section.topProducts .foodSlider .foodCard{
+    background: var(--heaven);
+    padding: 1.5rem 0;
+    border-radius: 4px;
+}
+
+section.topProducts .foodSlider .foodCard .productImage img{
+    width: 80%;
+    height: 200px;
+    object-fit: contain;
+    padding-bottom: 1rem;
+}
+
+hr{
+    border: 1px solid var(--light);
+    opacity: 0.8;
+    margin: 1rem 0;
+}
+
+section.topProducts .foodSlider .foodCard h2{
+    font-family: "Raleway-bold";
+    font-size: 1.3rem;  
+    margin-bottom: 0.25rem;
+}
+
+section.topProducts .foodSlider .foodCard .stars{
+    margin-bottom: 0.5rem;
+}
+
+section.topProducts .foodSlider .foodCard .stars img{
+    margin-right: 0.25rem; 
+}
+
+section.topProducts .foodSlider .foodCard .price{
+    font-family: 'Raleway-medium';
+    color: var(--danger);
+    margin-bottom: 1rem; 
+}
+
+section.topProducts .foodSlider .foodCard button{
+    font-family: "Raleway-medium";
+    color: var(--secondary);
+    background: var(--heaven);
+    border: 2px solid var(--primary);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    width: 50%;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+section.topProducts .foodSlider .foodCard button:hover{
+    background: var(--primary);
+    color: var(--heaven);
+}
+
+.foodSlider .foodCard button img{
+    background: var(--primary);
+    padding: 0.50rem;
+    height: 32px;
+    margin-right: 1.2rem;
+}
+
+/* SlickSlide */
+
+.slick-slide{
+    margin: 0 27px;
+}
+
+.slick-list{
+    margin: 0 -27px;
+}
+
+.topProducts .slider-btn{
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: var(--primary);
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+}
+
+.topProducts .slider{
+    position: relative;
+}
+
+.prev-btn{
+    position: absolute;
+    top: 46%;
+    left: -3rem;
+    z-index: 1;
+}
+
+.next-btn{
+    position: absolute;
+    top: 46%;
+    right: -3rem;
+    z-index: 1;
+}
+
+.topProducts .btnWrapper{
+    margin-top: 2rem;
+}
+
+.slick-track{
+    padding: 1rem 0;
+}
+
+/* About Meal Section */
+
+section.aboutMeal img{
+    width: 85%;
+}
+
+section.aboutMeal h3{
+    font-family: "Raleway-bold";
+    font-size: 1.4rem;
+    color: var(--secondary);
+    margin-bottom: 2rem;
+    line-height: 1.3;
+}
+
+section.aboutMeal p{
+    line-height: 1.7;
+    margin-bottom: 4rem;
+}
+
+
+/* Our Services Section */
+
+section.ourServices{
+    background: var(--light);
+    position: relative;
+    z-index: 0;
+}
+
+section.ourServices .cardWrapper{
+    margin-top: 8rem;
+    margin-right: -2rem;
+}
+
+section.ourServices .serviceCard{
+    background: var(--heaven);
+    text-align: center;
+    padding: 2rem;
+    padding-top: 4rem;
+    position: relative;
+    border-radius: 4px;
+    margin-right: 2rem;
+}
+
+section.ourServices .serviceCard .icon{
+    position: absolute;
+    top: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+section.ourServices .serviceCard h2{
+    font-family: "Raleway-bold";
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+section.ourServices .serviceCard p{
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* Deals Section */
+
+section.bigDeal{
+    background: linear-gradient(
+        rgba(35,43,56,0.9),
+        rgba(35,43,56,0.9)
+    ),url(../Images/food-table.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+section.bigDeal .timer{
+    margin-right: -2rem;
+    margin-bottom: 2rem;
+}
+
+section.bigDeal .timer div{
+    margin-right: 2rem;
+    background: var(--primary);
+    width: 150px;
+    height: 150px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+section.bigDeal .timer div span:first-child{
+    font-family: 'Raleway-semibold';
+    font-size: 2.5rem;
+    color: var(--heaven);
+    margin-bottom: 0.05rem;
+}
+
+section.bigDeal .timer div span:last-child{
+    font-family: 'Raleway-medium';
+    color: var(--heaven);
+}
+
+/* Latest News Section */
+
+section.latestNews{
+    background: var(--light);
+    position: relative;
+    z-index: 0;
+}
+
+.latestNews .articleWrapper{
+    margin-right: -2rem;
+}
+
+.latestNews .articleWrapper .card{
+    margin-right: 2rem;
+    background: var(--heaven); 
+    border-radius: 4px;
+}
+
+.latestNews .articleWrapper .card img{
+    width: 100%;
+}
+
+.latestNews .articleWrapper .card .cardContent{
+    padding: 2rem;
+}
+
+.latestNews .articleWrapper .card .cardContent .postMeta{
+    margin-bottom: 1rem;
+}
+
+.latestNews .articleWrapper .card .cardContent .postMeta .commentCount{
+    margin-left: 1rem;
+}
+
+.latestNews .articleWrapper .card .cardContent h2{
+    font-family: "Raleway-bold";
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.latestNews .articleWrapper .card .cardContent p{
+    line-height: 1.6;
+}
+
+.latestNews .btnWrapper{
+    margin-top: 2rem;
+}
+
+/* Subscribe Section */
+
+section.subscribe{
+    background: var(--primary);
+}
+
+section.subscribe .container > div:first-child img{
+    width: 90%;
+}
+
+section.subscribe .container div:first-child{
+    flex: 1;
+}
+
+section.subscribe .container div:last-child{
+    flex: 1;
+}
+
+section.subscribe h2{
+    font-family: "Raleway-bold";
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+section.subscribe p{
+    font-family: "Raleway-medium";
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+section.subscribe .inputWrap{
+    background: var(--heaven);
+    display: flex;
+    padding: 0.3rem;
+    border-radius: 4px;
+}
+
+section.subscribe .inputWrap input{
+    width: 100%;
+    border: none;
+    padding: 0 1rem;
+    font-size: 1rem;
+}
+
+section.subscribe .inputWrap input:focus{
+    outline: none;
+}
+
+section.subscribe .inputWrap button{
+    padding: 0.8rem 2rem;
+    border: none;
+    background: var(--primary);
+    color: var(--pure);
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all .3s ease;
+    outline: none;
+}
+
+section.subscribe .inputWrap button:hover{
+    background: var(--secondary);
+}
+
+/* Contact us Section */
+
+section.contactUs{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+section.contactUs .contactInfoWrapper{
+    padding: 4rem 0;
+    flex: 1;
+}
+
+section.contactUs .map{
+    flex: 1;
+    filter: grayscale(100%);
+}
+
+section.contactUs .contactInfo{
+    display: flex;
+    justify-content: center;
+}
+
+section.contactUs .contactInfo > div > div{
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+section.contactUs .contactInfo > div > div img{
+    margin-right: 1rem;
+}
+
+section.contactUs .contactInfo > div > div > div{
+    display: flex;
+    flex-direction: column;
+}
+
+section.contactUs .contactInfo > div > div > div span:first-child{
+    font-family: "Raleway-bold";
+    margin-bottom: 0.25rem;
+}
+
+/* Footer Section */
+
+footer{
+    background: var(--footer);
+    padding: 4rem 0;
+}
+
+footer .container{
+    display: flex;
+    color: var(--pure);
+}
+
+footer .box{
+    flex: 1;
+    margin-right: 2rem;
+    text-align: center;
+}
+
+footer .instagramApi img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+footer .instagramApi .postWrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+footer .instagramApi .postWrapper > div{
+    width: calc(1/3*100% - (1-1/3)*10px);
+    margin-bottom: 10px;
+}
+
+footer .box ul{
+    list-style-type: none;
+}
+
+footer .box ul li a{
+    color: var(--pure);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+footer .box ul li a:hover{
+    color: var(--primary);
+}
+
+footer .box h3{
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--primary);
+    margin-bottom: 1rem;
+}
+
+footer .box p{
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+footer .box ul li{
+    margin-bottom: 1rem;
+}
+
+footer .box:nth-child(3) > div{
+    display: flex;
+    justify-content: center;
+}
+
+footer .box:nth-child(3){
+    text-align: left;
+}
+
+footer .box:nth-child(3) h3{
+    text-align: center;
+}
+
+footer .box:nth-child(3) img{
+    margin-right: 1rem;
+}
+
+footer .box:nth-child(3) ul li{
+    margin-bottom: 1.5rem;
+}
+
+section.copyright{
+    padding: 1rem 0;
+    background: var(--secondary);
+    color: var(--pure);
+    text-align: center;
+    font-size: 0.75rem;
+}
+
+section.copyright a{
+    color: var(--primary);
+    text-decoration: none;
+}
+
+/* Responsive MediaQueries */
+
+@media (max-width:1201px){
+    .mainPage .mainImage{
+        right: -160px;
+        top: 100px;
+    }
+}
+
+@media (max-width:992px){
+    .navTrigger{
+        display:block;
+    }
+    header.topbar,nav{
+        display: none;
+    }
+
+    .mainPage{
+        margin-top:-4rem;
+    }
+
+    .topProducts .slider-btn{
+        display: none!important;
+    }
+
+    .latestNews .articleWrapper{
+        flex-direction: column;
+    }
+
+    .latestNews .articleWrapper .card{
+        margin-bottom: 4rem;
+    }
+
+    footer .instagramApi .postWrapper > div{
+        width: calc(1/2*100% - (1-1/3)*10px);
+    }
+}
+
+
+@media (max-width:768px){
+    .aboutMeal .aboutMealWrap{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .aboutMeal .aboutMealWrap img{
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    section.ourServices .cardWrapper{
+        flex-direction: column;
+    }
+
+    section.ourServices .cardWrapper .serviceCard{
+        margin-bottom: 6rem;
+    }
+
+    footer .container{
+        flex-direction: column;
+    }
+
+    footer .container .box{
+        text-align: left;
+        margin-right: 0;
+        margin-bottom: 3rem;
+    }
+
+    footer .box:nth-child(3) h3{
+        text-align: left;
+    }
+
+    footer .box:nth-child(3) > div{
+        display: block;
+    }
+}
+
+
+@media (max-width:576px){
+    .mainPage .mainImage{
+        right: -235px;
+        top: 150px;
+    }
+
+    .mainPage .container{
+        padding-left: 1rem;
+    }
+
+    .mainPage{
+        margin-top: -3rem;
+    }
+
+    section.subscribe .container{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    section.contactUs{
+        flex-direction: column;
+    }
+
+
+}
